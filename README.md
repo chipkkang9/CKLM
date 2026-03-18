@@ -1,4 +1,4 @@
-# CKLM : ChipKkang's Language Model (belongs to C2SR Lab.)
+# CKLM : ChipKkang9's Language Model (belongs to C2SR Lab.)
 ---
 WELCOME to CKLM! This is a kind helper to the students who are interested in AI and Cyber Security.
 
