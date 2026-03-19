@@ -42,3 +42,25 @@ class ChromaVectorStore:
             metadatas=list(metadatas),
         )
         return len(ids)
+
+    def query(self, query_embedding: Sequence[float], top_k: int = 4) -> list[dict]:
+        result = self.collection.query(
+            query_embeddings=[list(query_embedding)],
+            n_results=top_k,
+            include=["documents", "metadatas", "distances"],
+        )
+
+        documents = result.get("documents", [[]])[0]
+        metadatas = result.get("metadatas", [[]])[0]
+        distances = result.get("distances", [[]])[0]
+
+        rows: list[dict] = []
+        for document, metadata, distance in zip(documents, metadatas, distances):
+            rows.append(
+                {
+                    "document": document,
+                    "metadata": metadata or {},
+                    "distance": float(distance),
+                }
+            )
+        return rows

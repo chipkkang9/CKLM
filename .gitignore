@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Local RAG artifacts / datasets (do not push)
+data/chroma/
+data/raw/papers/
+
+# Optional parsed outputs
+# data/parsed/
