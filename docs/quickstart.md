@@ -1,4 +1,4 @@
-# Setup guide: Gemma 3 12B local RAG on Apple Silicon
+# Setup guide: Gemma 3 4B local RAG on Apple Silicon
 
 ## 1) Create the conda environment
 ```bash
